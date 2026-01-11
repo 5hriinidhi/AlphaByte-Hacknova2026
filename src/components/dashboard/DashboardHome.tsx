@@ -1,6 +1,6 @@
 
 import { SpecialNeedsAnalytics } from './SpecialNeedsAnalytics';
-import { TrendAnalysis } from './TrendAnalysis';
+
 import { CourseList } from './CourseList';
 
 
@@ -17,7 +17,7 @@ export function DashboardHome({ onNavigate }: DashboardHomeProps) {
                 {/* Main Analytics Area */}
                 <div className="w-full space-y-8">
                     <SpecialNeedsAnalytics />
-                    <TrendAnalysis />
+
                 </div>
             </div>
         </div>

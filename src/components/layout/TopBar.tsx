@@ -1,8 +1,10 @@
 import { Search, LogOut } from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
 
-export function TopBar() {
-    const { logout } = useAuth();
+interface TopBarProps {
+    logout: () => void;
+}
+
+export function TopBar({ logout }: TopBarProps) {
 
     return (
         <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 sticky top-0 z-10">

@@ -6,15 +6,16 @@ interface LayoutProps {
     children: ReactNode;
     activeItem: string;
     onNavigate: (item: string) => void;
+    logout: () => void;
 }
 
-export function Layout({ children, activeItem, onNavigate }: LayoutProps) {
+export function Layout({ children, activeItem, onNavigate, logout }: LayoutProps) {
     return (
         <div className="min-h-screen bg-[#F3F4F9]">
             <Sidebar activeItem={activeItem} onNavigate={onNavigate} />
 
             <div className="pl-64 flex flex-col min-h-screen">
-                <TopBar />
+                <TopBar logout={logout} />
 
                 <main className="flex-1 p-8">
                     <div className="max-w-7xl mx-auto">

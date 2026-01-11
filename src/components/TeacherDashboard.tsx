@@ -21,7 +21,7 @@ import { ContentDivision } from './ContentDivision';
 import { Layout } from './layout/Layout';
 
 export function TeacherDashboard() {
-    const { registerStudent, allStudents, assignDisabilityProfile } = useAuth();
+    const { registerStudent, allStudents, assignDisabilityProfile, logout } = useAuth();
     const [activeSidebarItem, setActiveSidebarItem] = useState('dashboard');
     const [activeStudentTab, setActiveStudentTab] = useState<'register' | 'manage'>('register');
 
@@ -136,7 +136,7 @@ export function TeacherDashboard() {
         try {
             await Promise.all(
                 Object.entries(selectedDisabilities).map(([type, severity]) =>
-                    assignDisabilityProfile(selectedStudentId, type as DisabilityType, severity)
+                    assignDisabilityProfile(selectedStudentId, { disability_type: type as DisabilityType, severity })
                 )
             );
 
@@ -553,7 +553,7 @@ export function TeacherDashboard() {
     };
 
     return (
-        <Layout activeItem={activeSidebarItem} onNavigate={setActiveSidebarItem}>
+        <Layout activeItem={activeSidebarItem} onNavigate={setActiveSidebarItem} logout={logout}>
             {renderContent()}
         </Layout>
     );
