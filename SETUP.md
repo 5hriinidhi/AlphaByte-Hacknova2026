@@ -72,57 +72,6 @@ npm install
 
 2. The Supabase database is already configured with all necessary tables and Row Level Security policies.
 
-3. Create sample data:
-```sql
--- Sample student (roll number: 2024001)
-INSERT INTO students (id, roll_number, name, email)
-VALUES ('00000000-0000-0000-0000-000000000001', '2024001', 'John Doe', 'john@example.com');
-
--- Add disability profiles
-INSERT INTO disability_profiles (student_id, disability_type, severity)
-VALUES
-  ('00000000-0000-0000-0000-000000000001', 'visually_impaired', 'moderate'),
-  ('00000000-0000-0000-0000-000000000001', 'adhd', 'mild');
-
--- Create accessibility settings
-INSERT INTO accessibility_settings (
-  student_id,
-  semantic_reader_enabled,
-  bionic_reading_enabled,
-  focus_tunnel_enabled,
-  ai_image_descriptions_enabled
-)
-VALUES (
-  '00000000-0000-0000-0000-000000000001',
-  true,
-  true,
-  true,
-  true
-);
-
--- Add learning records
-INSERT INTO learning_health_records (student_id, subject, topic, comprehension_score, confusion_level, engagement_score)
-VALUES
-  ('00000000-0000-0000-0000-000000000001', 'Mathematics', 'Algebra', 75, 20, 85),
-  ('00000000-0000-0000-0000-000000000001', 'Science', 'Physics', 65, 35, 70),
-  ('00000000-0000-0000-0000-000000000001', 'History', 'World War II', 80, 15, 90);
-
--- Add remedial assignments
-INSERT INTO remedial_assignments (student_id, title, description, topic, difficulty_level, status)
-VALUES
-  ('00000000-0000-0000-0000-000000000001',
-   'Algebra Practice',
-   'Complete 10 problems on linear equations to strengthen your understanding.',
-   'Algebra',
-   'medium',
-   'pending'),
-  ('00000000-0000-0000-0000-000000000001',
-   'Physics Review',
-   'Review Newton''s laws with interactive examples.',
-   'Physics',
-   'medium',
-   'in_progress');
-```
 
 4. Start the development server (automatically started):
 ```bash
@@ -150,9 +99,9 @@ npm run build
 - **Styling**: Tailwind CSS
 - **Database**: Supabase (PostgreSQL)
 - **Icons**: Lucide React
-- **Authentication**: Custom roll-number based (non-Supabase Auth)
+- **Authentication**: Custom roll-number-based (non-Supabase Auth)
 
-## Future Enhancements
+## more enhancements in extension Enhancements
 
 - Real Gemini Vision API integration for image descriptions
 - Web Speech API implementation for voice navigation
