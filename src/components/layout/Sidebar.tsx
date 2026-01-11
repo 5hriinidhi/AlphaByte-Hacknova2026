@@ -45,13 +45,6 @@ export function Sidebar({ activeItem, onNavigate }: SidebarProps) {
             </nav>
 
             <div className="p-4 mt-auto">
-                <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm">
-                    <p className="text-xs text-blue-200 mb-1">Storage Used</p>
-                    <div className="w-full bg-white/10 rounded-full h-1.5 mb-2">
-                        <div className="bg-blue-400 h-1.5 rounded-full w-[75%]" />
-                    </div>
-                    <p className="text-xs text-blue-200">75% of 100GB</p>
-                </div>
             </div>
         </div>
     );
